@@ -12,9 +12,24 @@ public class DoubleArr {
 		// arr1*arr2 결과
 		int[][] arr=new int[arr1.length][arr2[0].length];
 		
+		for(int i=0; i<arr1.length; i++) {
+			for(int j=0; j<arr2[0].length; j++) {
+				for (int k=0; k<arr2.length; k++) {
+					arr[i][j]+=arr1[i][k]*arr2[k][j];	
+				}
+			}
+		}
+		
+		//확인
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length; j++) {
+					System.out.print(arr[i][j]+" ");			
+			}
+			System.out.println(); //행바꿈
+		}
 		
 	}
-	
+
 }
 
 // 00 01  00 01 = 00*00+01*10 00*10+01*11
