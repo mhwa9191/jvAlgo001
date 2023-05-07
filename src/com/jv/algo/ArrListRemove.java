@@ -3,6 +3,7 @@ package com.jv.algo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ArrListRemove {
@@ -36,6 +37,19 @@ public class ArrListRemove {
 			}
 		}
 		System.out.println("result "+Arrays.toString(result)); //result [4, 3, 2]
-
+		System.out.println("=============");
+				
+		ArrayList<Integer> arrlist2 = new ArrayList<Integer>(List.of(4,3,1,2));
+		int del2=3;
+		arrlist2.remove(arrlist2.indexOf(del2));
+		System.out.println("arrlist2 "+arrlist2);
+		
+		ArrayList<Integer> arrlist3 = new ArrayList<Integer>(List.of(4,3,1,2));
+		int del3=3;
+		int indexDel3=arrlist3.indexOf(del3);
+		arrlist3.remove(indexDel3);
+		System.out.println("arrlist3 "+arrlist3);
+		System.out.println("=============");
+		
 	}
 }
