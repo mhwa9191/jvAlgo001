@@ -36,6 +36,6 @@ public class LZW {
 			System.out.println(list); 
 			if(cnt>1) {i+=cnt-2;} //찾은 문자열 길이만큼 건너뛰기
 		}
-		System.out.println(list); //[1, 2, 14, 27, 14, 28]		
+		System.out.println(list); //[1, 2, 14, 27, 14, 28]
 	}
 }
