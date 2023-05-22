@@ -13,6 +13,19 @@ public class ThreeTest {
 			}
 			System.out.print(num+"\t");
 		}
+		System.out.println("\n---- ");
+		
+		
+		//
+		//String.valueOf(answer).contains("3")
+		int answer=0;
+		for(int i=1;i<=N;i++) {
+			answer++;
+			if(answer%3==0 || String.valueOf(answer).contains("3")) {
+				i--;
+			}
+		}
+		System.out.print("answer :"+answer);
 	}
 	public static Boolean check(int num) {
 		boolean bool=false;
