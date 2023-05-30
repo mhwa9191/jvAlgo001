@@ -67,7 +67,7 @@ public class DoubleArr {
         for(int i=0;i<dots.length;i++){
             if(dots[i][0]!=aa){
                 xx=Math.abs(aa-dots[i][0]);
-            }else if(dots[i][0]!=b){
+            }else if(dots[i][1]!=bb){
                 yy=Math.abs(bb-dots[i][1]);
             }
         }
