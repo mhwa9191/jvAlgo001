@@ -13,16 +13,26 @@ public class ExhaustiveTest {
 		System.out.println("::: word4 solution "+solution(word4));
 
 	}
-
 	public static int solution(String word) {
 		int get = 0;
-		int per=((((5+1)*5+1)*5+1)*5+1)*5; // 3905
-		System.out.println("\tper  "+per);
-		
-		for(String w: word.split("")){
-			get+= "AEIOU".indexOf(w)*(per/=5)+1;
-			System.out.println("per  "+per+"  get "+get);
-		}
+        int per=781; // 781 = (((5+1)*5+1)*5+1)*5+1
+        
+        for(String w: word.split("")){
+        	System.out.println("per  "+per+"  get "+get);
+            get+= "AEIOU".indexOf(w)*(per)+1;
+            per/=5;
+        }
 		return get;
 	}
+//	public static int solution(String word) {
+//		int get = 0;
+//		int per=((((5+1)*5+1)*5+1)*5+1)*5; // 3905
+//		System.out.println("\tper  "+per);
+//		
+//		for(String w: word.split("")){
+//			get+= "AEIOU".indexOf(w)*(per/=5)+1;
+//			System.out.println("per  "+per+"  get "+get);
+//		}
+//		return get;
+//	}
 }
