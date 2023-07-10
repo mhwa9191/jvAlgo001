@@ -40,7 +40,8 @@ public class Keyboard {
                 	}
                 }
         		System.out.println("click  :: "+click);
-        		System.out.println();        		
+        		System.out.println();    
+                if(click== -1){sum=-1;break;}
         		sum+=click;
         	}
         	System.out.println("sum  :: "+sum);
