@@ -20,6 +20,7 @@ public class ReportTest {
 
 	public static int[] solution(String[] id_list, String[] report, int k) {
 		int[] answer= new int[id_list.length];
+		int[] result= new int[id_list.length];
 
 		HashMap<String, String> map=new HashMap<String, String>();
 		//나를 신고한 목록을 만들고 중복되면 체크안됨
@@ -37,15 +38,16 @@ public class ReportTest {
 			}
 			
 		}
-		System.out.println(map);
+//		System.out.println(map);
 		
 		for(int i=0; i<id_list.length; i++) {
 			if(map.get(id_list[i])==null) {answer[i]=0;}
 			else {
-			answer[i]=map.get(id_list[i]).split(" ").length;
+			result[i]=map.get(id_list[i]).split(" ").length;
 			}
 		}
 		//정지된 유저 확인됨
+		System.out.println(Arrays.toString(result));
 		
 		//결과 알림
 		
