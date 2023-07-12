@@ -77,7 +77,7 @@ public class ReportTest {
 				id_report.put(id_list[i], map.get(id_list[i]).split(" ").length);
 			}
 		}
-//		System.out.println("id_report  "+id_report);
+		System.out.println("id_report  "+id_report);
 		
 		//결과 알림
 		for(int i=0; i<id_list.length; i++) {
@@ -91,8 +91,7 @@ public class ReportTest {
 				}
 			}
 			
-		}
-		
+		}		
 		
 		return answer;
 	}
