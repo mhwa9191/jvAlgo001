@@ -23,6 +23,7 @@ public class ReportTest {
 		int[] result= new int[id_list.length];
 
 		HashMap<String, String> map=new HashMap<String, String>();
+		HashMap<String, String> map2=new HashMap<String, String>(); //내가 신고한 목록
 		//나를 신고한 목록을 만들고 중복되면 체크안됨
 		for(int i=0; i<report.length; i++) {
 			String[] temp=report[i].split(" ");
@@ -38,7 +39,19 @@ public class ReportTest {
 			}
 			
 		}
+		for(int i=0; i<report.length; i++) {
+			String[] temp=report[i].split(" ");
+//			System.out.println("신고한 유저: "+temp[0]+",  신고된 유저: "+temp[1]);
+			String report_user=temp[0];
+			String reported_user=temp[1];
+			if(map2.get(report_user)==null) {
+				map2.put(report_user, reported_user);
+			}else {
+				map2.put(report_user, map2.get(report_user)+" "+reported_user);
+			}
+		}
 //		System.out.println(map);
+//		System.out.println("map2 :: "+map2);
 		
 		for(int i=0; i<id_list.length; i++) {
 			if(map.get(id_list[i])==null) {
@@ -49,20 +62,34 @@ public class ReportTest {
 			}
 		}
 		//정지된 유저 확인됨
-		System.out.println(Arrays.toString(result));
+//		System.out.println(Arrays.toString(result));
 		for(int i=0; i<id_list.length; i++) {
 			if(result[i]>=k) {
-				System.out.println(" 정지 :: "+id_list[i]);
+//				System.out.println(" 정지 :: "+id_list[i]);
 			}
 		}
 		
+		HashMap<String, Integer> id_report = new HashMap<String, Integer>();
+		for(int i=0; i<id_list.length; i++) {
+			if(map.get(id_list[i])==null) {
+				id_report.put(id_list[i], 0);
+			}else {
+				id_report.put(id_list[i], map.get(id_list[i]).split(" ").length);
+			}
+		}
+//		System.out.println("id_report  "+id_report);
 		
 		//결과 알림
-		for(int i=0; i<report.length; i++) {
-			String[] temp=report[i].split(" ");
-			String report_id=temp[0];
-			String reported_id=temp[1];
-			
+		for(int i=0; i<id_list.length; i++) {
+			if(map2.get(id_list[i])==null) {
+				answer[i]=0;
+			}else {
+				for(String str : map2.get(id_list[i]).split(" ")) {
+					if(id_report.get(str)>=k) {
+						answer[i]++;
+					}
+				}
+			}
 			
 		}
 		
