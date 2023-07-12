@@ -107,7 +107,7 @@ public class ReportTest {
 	}
 	
 	
-	//정확도 45
+	//통과
 	public static int[] solution2(String[] id_list, String[] report, int k) { 
 		int[] answer= new int[id_list.length];
 		 
