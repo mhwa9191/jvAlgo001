@@ -41,15 +41,30 @@ public class ReportTest {
 //		System.out.println(map);
 		
 		for(int i=0; i<id_list.length; i++) {
-			if(map.get(id_list[i])==null) {answer[i]=0;}
+			if(map.get(id_list[i])==null) {
+				result[i]=0;
+			}
 			else {
-			result[i]=map.get(id_list[i]).split(" ").length;
+				result[i]=map.get(id_list[i]).split(" ").length;
 			}
 		}
 		//정지된 유저 확인됨
 		System.out.println(Arrays.toString(result));
+		for(int i=0; i<id_list.length; i++) {
+			if(result[i]>=k) {
+				System.out.println(" 정지 :: "+id_list[i]);
+			}
+		}
+		
 		
 		//결과 알림
+		for(int i=0; i<report.length; i++) {
+			String[] temp=report[i].split(" ");
+			String report_id=temp[0];
+			String reported_id=temp[1];
+			
+			
+		}
 		
 		
 		return answer;
