@@ -13,6 +13,11 @@ public class SquareRoot {
 		System.out.println("2 sol1 :: "+solution2(num1));
 		System.out.println("2 sol2 :: "+solution2(num2));
 		
+	    
+		//pow
+		System.out.println("pow sqrt "+Math.pow((int)Math.sqrt(num1), 2));	
+        System.out.println("pow sqrt (long) "+(long)Math.pow((int)Math.sqrt(num1), 3));
+		
 	}
 	
 	public static long solution(long n) {
