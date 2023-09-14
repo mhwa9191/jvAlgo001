@@ -85,6 +85,7 @@ public class Wires2 {
 //	private static int[] check;
 //	
 //	private static int dfs(int num) {
+//		check[num] = 1;		
 //		int node = 1;
 //		for (int i = 1; i <= N; i++) {
 //			if(check[i]==0 && tree[num][i]==1) {
