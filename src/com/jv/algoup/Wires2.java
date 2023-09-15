@@ -77,46 +77,4 @@ public class Wires2 {
 		return cnt;
 	}
 	
-	
-	
-	//다른사람풀이
-//	private static int N, min;
-//	private static int[][] tree;
-//	private static int[] check;
-//	
-//	private static int dfs(int num) {
-//		check[num] = 1;		
-//		int node = 1;
-//		for (int i = 1; i <= N; i++) {
-//			if(check[i]==0 && tree[num][i]==1) {
-//				check[i] = 1;
-//				System.out.println("check "+Arrays.toString(check)+"\t node "+node);
-//				node +=dfs(i);
-//				System.out.println();
-//				System.out.println("check "+Arrays.toString(check)+"\t node "+node);
-//			}
-//		}
-//		System.out.println(node+"\tnode");
-//		min = Math.min(min, Math.abs(node-(N-node)));
-//		System.out.println(min+"\tmin");
-//		return node;
-//	}
-//	public static int sol(int n, int[][] wires) {
-//		N = n;
-//		min = n;
-//		tree = new int[n+1][n+1];
-//		check = new int [n+1];
-//		
-//		System.out.println(Arrays.deepToString(tree));
-//		for(int[] wire : wires) {
-//			int a = wire[0], b = wire[1];
-//			System.out.println("a "+a+"\t b "+b);
-//			tree[a][b] = tree[b][a] = 1;
-//		}
-//		System.out.println(Arrays.deepToString(tree));
-//		System.out.println("-check "+Arrays.toString(check));
-//		dfs(1);
-//		System.out.println("---check "+Arrays.toString(check));
-//		return min;
-//	}
 }
