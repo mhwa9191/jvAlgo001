@@ -63,37 +63,36 @@ public class ChatBoard {
 		
 		Queue<int[]> que = new LinkedList<int[]>();
 		que.add(new int[] {x,y});
-		
-		int num = 0;
+
 		while(!que.isEmpty()) {
 			int[] cur = que.remove();
 			int cX = cur[0];
 			int cY = cur[1];
 			
+//			if(map[cX][cY].equals("G")) {
+//				System.out.println("GGGGG");
+//				break;
+//			}
+			
 			for(int i=0; i<4; i++) {
 				int nX = cX + dx[i];
 				int nY = cY + dy[i];
 				
+				
 				while(nX>=0 && nX<map.length && nY>=0 && nY<map[0].length) {
-					System.out.println("-");
+					//System.out.println("-");
 					if (map[nX][nY].equals("D")) {
 						break;
 					}
 					nX += dx[i];
 					nY += dy[i];
 				}
-				if(vst[nX-dx[i]][nY-dy[i]]==0) {
+				if(vst[nX-dx[i]][nY-dy[i]]==0 && !map[nX-dx[i]][nY-dy[i]].equals("R")) {
 					vst[nX-dx[i]][nY-dy[i]]=vst[cX][cY]+1;
 					que.add(new int[] {nX-dx[i], nY-dy[i]});
-					break;
+					//break;
 				}
 			}
-			
-			if(map[cX][cY].equals("G")) {
-				
-				break;
-			}
-			
 			
 		}
 		for(int i=0; i<vst.length;i++) {
